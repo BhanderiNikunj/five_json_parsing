@@ -1,21 +1,22 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fore_json_parsing/Screen/JsonData3/Model/JsonScreenModel3.dart';
+import 'package:fore_json_parsing/Screen/JsonData4/Model/JsonScreenModel4.dart';
 
-class JsonScreenProvider3 extends ChangeNotifier {
-  List<dynamic> Json3 = [];
+class JsonScreenProvider4 extends ChangeNotifier {
+  List<dynamic> Json4 = [];
 
-  Future<void> JsonParsh3() async {
+  Future<void> JsonParsh4() async {
     String jsonDataString =
-        await rootBundle.loadString("Assets/Json/JsonFile3.json");
+        await rootBundle.loadString("Assets/Json/JsonFile4.json");
 
     var Json = jsonDecode(jsonDataString);
 
-    List<dynamic> JsonDataList3 =
-        Json.map((e) => JsonScreenModel3().fornJson3(e)).toList();
+    List<dynamic> JsonDataList4 =
+        Json.map((e) => JsonScreenModel4().fornJson4(e)).toList();
 
-    Json3 = JsonDataList3;
+    Json4 = JsonDataList4;
+    print(Json);
     notifyListeners();
   }
 }

@@ -1,24 +1,30 @@
-class JsonScreenModel3 {
-  String? title;
-  int? id, userId;
+class JsonScreenModel4 {
+  String? title, url, thumbnailUrl;
+  int? id, albumId;
 
-  JsonScreenModel3({
+  JsonScreenModel4({
     this.title,
+    this.url,
+    this.thumbnailUrl,
     this.id,
-    this.userId,
+    this.albumId,
   });
 
-  JsonScreenModel3 fornJson3(Map m1) {
+  JsonScreenModel4 fornJson4(Map m1) {
     title = m1['title'];
     id = m1['id'];
-    userId = m1['userId'];
+    albumId = m1['albumId'];
+    url = m1['url'];
+    thumbnailUrl = m1['thumbnailUrl'];
 
-    JsonScreenModel3 j3 = JsonScreenModel3(
-      id: id,
+    JsonScreenModel4 j4 = JsonScreenModel4(
       title: title,
-      userId: userId,
+      id: id,
+      albumId: albumId,
+      thumbnailUrl: thumbnailUrl,
+      url: url,
     );
 
-    return j3;
+    return j4;
   }
 }

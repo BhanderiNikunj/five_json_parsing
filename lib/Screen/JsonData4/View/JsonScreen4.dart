@@ -1,49 +1,49 @@
 import 'package:flutter/material.dart';
-import 'package:fore_json_parsing/Screen/JsonData3/Provider/JsonScreenProvider3.dart';
+import 'package:fore_json_parsing/Screen/JsonData4/Provider/JsonScreenProvider4.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class JsonScreen3 extends StatefulWidget {
-  const JsonScreen3({Key? key}) : super(key: key);
+class JsonScreen4 extends StatefulWidget {
+  const JsonScreen4({Key? key}) : super(key: key);
 
   @override
-  State<JsonScreen3> createState() => _JsonScreen3State();
+  State<JsonScreen4> createState() => _JsonScreen4State();
 }
 
-class _JsonScreen3State extends State<JsonScreen3> {
-  JsonScreenProvider3? jsonScreenProvider3True;
-  JsonScreenProvider3? jsonScreenProvider3False;
+class _JsonScreen4State extends State<JsonScreen4> {
+  JsonScreenProvider4? jsonScreenProvider4True;
+  JsonScreenProvider4? jsonScreenProvider4False;
 
   @override
   void initState() {
     super.initState();
 
-    Provider.of<JsonScreenProvider3>(context, listen: false).JsonParsh3();
+    Provider.of<JsonScreenProvider4>(context, listen: false).JsonParsh4();
   }
 
   @override
   Widget build(BuildContext context) {
-    jsonScreenProvider3False =
-        Provider.of<JsonScreenProvider3>(context, listen: false);
-    jsonScreenProvider3True =
-        Provider.of<JsonScreenProvider3>(context, listen: true);
+    jsonScreenProvider4False =
+        Provider.of<JsonScreenProvider4>(context, listen: false);
+    jsonScreenProvider4True =
+        Provider.of<JsonScreenProvider4>(context, listen: true);
 
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.black,
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Json Data 3"),
+          title: Text("Json Data 4"),
           backgroundColor: Colors.black,
         ),
         body: ListView.builder(
-          itemCount: jsonScreenProvider3False!.Json3.length,
+          itemCount: jsonScreenProvider4False!.Json4.length,
           itemBuilder: (context, index) {
             return Padding(
               padding: EdgeInsets.all(8.0),
               child: InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, 'json3 full',arguments: index);
+                  Navigator.pushNamed(context, 'json4 full',arguments: index);
                 },
                 child: Container(
                   height: 100,
@@ -56,7 +56,7 @@ class _JsonScreen3State extends State<JsonScreen3> {
                   child: Row(
                     children: [
                       Text(
-                        "${jsonScreenProvider3False!.Json3[index].id}",
+                        "${jsonScreenProvider4False!.Json4[index].id}",
                         style: GoogleFonts.neuton(
                           color: Colors.white,
                           fontSize: 30,
@@ -65,7 +65,7 @@ class _JsonScreen3State extends State<JsonScreen3> {
                       SizedBox(width: 20),
                       Expanded(
                         child: Text(
-                          "${jsonScreenProvider3False!.Json3[index].title}",
+                          "${jsonScreenProvider4False!.Json4[index].title}",
                           style: GoogleFonts.neuton(
                             color: Colors.white,
                             fontSize: 20,
